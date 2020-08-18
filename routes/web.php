@@ -17,6 +17,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
+
+Route::get('/login', 'User\Auth\LoginController@showLoginForm')->name('login');
+Route::get('/register', 'User\Auth\RegisterController@showRegistrationForm')->name('register');
+
+Route::get('/password/confirm', 'User\Auth\ConfirmPasswordController@showConfirmForm')->name('password.confirm');
+
+Route::get('/password/reset', 'User\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::get('/password/reset/{token}', 'User\Auth\ResetPasswordController@showResetForm')->name('password.reset');
+
+Route::post('/login', 'User\Auth\LoginController@login');
+Route::post('/logout', 'User\Auth\LoginController@logout')->name('logout');
+Route::post('/register', 'User\Auth\RegisterController@register');
+Route::post('/password/confirm', 'User\Auth\ConfirmPasswordController@confirm');
+Route::post('/password/email', 'User\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::post('/password/reset', 'User\Auth\ResetPasswordController@reset')->name('password.update');
 
 Route::get('/home', 'HomeController@index')->name('home');

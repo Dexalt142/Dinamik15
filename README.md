@@ -6,8 +6,21 @@ Dinamik 15 Official Website Repository
 <br/>
 
 ## Frontend framework
-<img width="40px" align="left" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/vue/vue.png"/>
+<img width="40px" align="left" src="https://raw.githubusercontent.com/github/explore/37f1f9609f5c48a47f4d9c1a916fc2069fd0141c/topics/nuxt/nuxt.png"/>
 <br/>
+
+## Instalasi
+1. Download / clone repo
+2. Buka cmd / terminal di folder project, terus run
+  ```
+  composer install
+  ```
+3. Copy .env.example terus rename jadi .env, edit konfigurasi database
+4. Migrate database & generate key
+  ```
+  php artisan migrate
+  php artisan key:generate
+  ```
 
 ## To-Do
 - Landing page

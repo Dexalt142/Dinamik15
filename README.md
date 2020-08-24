@@ -20,18 +20,27 @@ Dinamik 15 Official Website Repository
   ```
   php artisan migrate
   php artisan key:generate
+  php artisan jwt:secret
   ```
 
 ## To-Do
-- Landing page
-- User auth system
-  - Login
-  - Register
-  - Verify email
-  - Forget password
-- User dashboard
-  - Semua
-- Admin auth system
-  - Login
-- Admin dashboard
-  - Semua
+- API
+  - User auth system
+    - Login (DONE)
+    - Register (DONE)
+    - Verify email
+    - Forget password
+
+- Front-end
+  - Landing page
+  - User auth system
+    - Login
+    - Register
+    - Verify email
+    - Forget password
+  - User dashboard
+    - Semua
+  - Admin auth system
+    - Login
+  - Admin dashboard
+    - Semua

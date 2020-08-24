@@ -14,6 +14,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+/**
+ * Endpoint auth
+ */
+Route::group(['prefix' => 'auth', 'namespace' => 'api\Auth'], function() {
+
+    Route::post('login', 'LoginController@login');
+    Route::post('register', 'RegisterController@register');
+
 });
+
+/**
+ * Endpoint lain-lain
+ */
+Route::any('/', function() {
+    return response()->json([
+        'status' => 403,
+        'message' => 'Bad request'
+    ], 403);
+});
+
+/**
+ * Endpoint lain-lain
+ */
+Route::any('{any}', function() {
+    return response()->json([
+        'status' => 403,
+        'message' => 'Bad request'
+    ], 403);
+})->where('any', '.*');

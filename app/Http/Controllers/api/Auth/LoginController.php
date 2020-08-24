@@ -91,9 +91,18 @@ class LoginController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'required' => ':attribute tidak boleh kosong'
+        ];
+
+        $attributes = [
+            'email' => 'Email',
+            'password' => 'Password'
+        ];
+
         return Validator::make($data, [
             'email' => ['required'],
             'password' => ['required'],
-        ]);
+        ], $messages, $attributes);
     }
 }

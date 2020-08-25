@@ -42,7 +42,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Undocumented function
+     * Attempt login
      *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
@@ -54,7 +54,7 @@ class LoginController extends Controller
         if($validator->fails()) {
             return response()->json([
                 'status' => 422,
-                'message' => 'The given was invalid',
+                'message' => 'The given data was invalid',
                 'errors' => $validator->errors()
             ], 422);
         }
@@ -84,7 +84,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Undocumented function
+     * Request validator
      *
      * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator

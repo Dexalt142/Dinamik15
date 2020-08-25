@@ -29,7 +29,8 @@ Dinamik 15 Official Website Repository
     - Login (DONE)
     - Register (DONE)
     - Verify email
-    - Forget password
+    - Forgot password (DONE)
+    - Reset password (DONE)
 
 - Front-end
   - Landing page

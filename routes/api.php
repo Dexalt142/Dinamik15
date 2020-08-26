@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +23,11 @@ Route::group(['prefix' => 'auth', 'namespace' => 'api\Auth'], function() {
     Route::post('register', 'RegisterController@register');
 
     Route::group(['middleware' => 'api.auth'], function() {
-        Route::get('user', 'SessionController@getUser');
+        Route::get('user', 'SessionController@getUser')->middleware('api.verified');
         Route::post('logout', 'SessionController@logout');
+
+        Route::post('email/verify/{id}/{hash}', 'VerificationController@verify')->name('email.verify');
+        Route::post('email/resend', 'VerificationController@resend');
     });
 
     Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail');
@@ -40,15 +42,15 @@ Route::group(['middleware' => 'api.auth'], function() {
 
     Route::any('/', function() {
         return response()->json([
-            'status' => 403,
+            'status' => 400,
             'message' => 'Bad request'
-        ], 403);
+        ], 400);
     });
     
     Route::any('{any}', function() {
         return response()->json([
-            'status' => 403,
+            'status' => 400,
             'message' => 'Bad request'
-        ], 403);
+        ], 400);
     })->where('any', '.*');
 });

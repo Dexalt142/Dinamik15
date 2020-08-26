@@ -28,7 +28,7 @@ Dinamik 15 Official Website Repository
   - User auth system
     - Login (DONE)
     - Register (DONE)
-    - Verify email
+    - Verify email (DONE)
     - Forgot password (DONE)
     - Reset password (DONE)
 

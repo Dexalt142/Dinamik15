@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap');
+
+$lightBlue: #B3E0FF;
+$blue: #253C88;
+$darkBlue: #192A62;
+$orange: #E58F14;
+$yellow: #EEBB0A;
+
+* {
+    font-family: 'Raleway';
+}
+
+.dinamik-navbar {
+    background-color: $blue;
+    min-height: 65px;
+    
+    .navbar-brand {
+        color: #FFF;
+
+        img {
+            width: 185px;
+        }
+    }
+
+    .nav-link {
+        color: #DDD;
+        font-weight: 600;
+
+        &:hover {
+            color: #FFF;
+        }
+    }
+
+    .navbar-toggler {
+        padding-top: 0;
+        padding-bottom: 0;
+        border: 0;
+
+        &:focus {
+            outline: 0;
+        }
+
+        .bar {
+            position: relative;
+            width: 40px;
+            background-color: #FFF;
+            height: 4px;
+            border-radius: 1rem;
+            display: block;
+            margin: .5rem 0;
+        }
+    }
+
+}
+
+.page-section {
+    padding: 4rem 0;
+}
+
+.btn {
+    border-radius: 2rem;
+    padding: .5rem 2rem;
+    font-weight: 600;
+
+    &.btn-yellow {
+        background: linear-gradient(45deg, $yellow, $orange);
+        color: #FFF;
+        border: none
+    }
+}
+
+.divider {
+
+    overflow: hidden;
+
+    &.white {
+        background-color: $blue;
+
+        svg {
+            path {
+                fill: #FFF;
+            }
+        }
+    }
+
+    &.blue {
+        background-color: #FFF;
+
+        svg {
+            path {
+                fill: $blue;
+            }
+        }
+    }
+
+    svg {
+        position: relative;
+        display: block;
+        width: calc(140% + 1.3px);
+        height: 100px;
+    }
+}

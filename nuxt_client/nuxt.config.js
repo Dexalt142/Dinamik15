@@ -68,11 +68,27 @@ export default {
   axios: {
     baseURL: 'http://dinamik15.test/api'
   },
+  loading: {
+    color: '#EEBB0A',
+    height: '2px'
+  },
+
+  loadingIndicator: {
+    name: 'three-bounce',
+    color: '#EEBB0A',
+    background: '#253C88'
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-    extractCSS: true
+    extractCSS: true,
+    filenames: {
+      app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
+      css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
+      img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[contenthash:10].[ext]',
+    }
   }
 }

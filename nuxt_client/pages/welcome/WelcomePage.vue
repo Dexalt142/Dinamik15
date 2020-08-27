@@ -26,13 +26,36 @@
         </div>
 
         <section class="page-section" id="competition">
+            <div class="container">
+                <div class="title">Competition</div>
+                <div class="competition-card-group">
+                    <div class="row">
+                        <CompetitionCard name="Animasi" description="Deskripsi animasi">
+                            <img src="~/assets/image/animation.png" alt="Animation">
+                        </CompetitionCard>
 
+                        <CompetitionCard name="Web" description="Deskripsi web">
+                            <img src="~/assets/image/web.png" alt="Web">
+                        </CompetitionCard>
+
+                        <CompetitionCard name="Iwc" description="Deskripsi iwc">
+                            <img src="~/assets/image/iwc.png" alt="Iwc">
+                        </CompetitionCard>
+
+                        <CompetitionCard name="Poster" description="Deskripsi poster">
+                            <img src="~/assets/image/poster.png" alt="Poster">
+                        </CompetitionCard>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 </template>
 
 <script>
 import Card from '~/components/global/Card';
+import CompetitionCard from '~/components/WelcomePage/CompetitionCard';
+
 export default {
     head() {
         return {
@@ -40,7 +63,7 @@ export default {
         }
     },
     components: {
-        Card
+        Card, CompetitionCard
     },
     methods: {
     },

@@ -55,6 +55,34 @@ $yellow: #EEBB0A;
 
 .page-section {
     padding: 4rem 0;
+
+    .title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 2rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: relative;
+            display: block;
+            width: 100px;
+            height: 6px;
+            border-radius: 1rem;
+            background-color: $blue;
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .subtitle {
+        margin: 1rem 0;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.25rem;
+        color: #777;
+    }
 }
 
 .btn {
@@ -98,5 +126,63 @@ $yellow: #EEBB0A;
         display: block;
         width: calc(140% + 1.3px);
         height: 100px;
+    }
+}
+
+.competition-card-group {
+    margin-top: 8rem;
+
+    .competition-card {
+        position: relative;
+        background-color: $orange;
+        border: none;
+        border-radius: 1rem;
+        transition: all .25s ease;
+    
+        img {
+            position: relative;
+            transform: translateY(-50%);
+            margin-bottom: -40%;
+            width: 100%;
+        }
+    
+        .competition-title {
+            color: #FFF;
+            font-weight: 600;
+            font-size: 1.75rem;
+            text-align: center;
+        }
+    
+        .competition-description {
+            color: #EEE;
+            font-weight: 500;
+            font-size: 1.25rem;
+            text-align: center;
+        }
+    
+        &:hover {
+            box-shadow: 0.5rem 0.5rem 0 rgba(233,236,239,.5);
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    .competition-card-group {
+        margin-top: 10rem;
+        
+        .competition-card {
+            margin-bottom: 8rem;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .competition-card-group {
+        margin-top: 15rem;
+        
+        .competition-card {
+            margin-bottom: 14rem;
+        }
     }
 }

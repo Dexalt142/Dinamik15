@@ -49,6 +49,13 @@
                 </div>
             </div>
         </section>
+
+        <section class="page-section" id="seminar">
+            <div class="container">
+                <div class="title">Seminar Nasional</div>
+                <div class="subtitle">Optimalisasi Digital Skill untuk Menunjang Terciptanya Society 5.0</div>
+            </div>
+        </section>
     </div>
 </template>
 

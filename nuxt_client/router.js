@@ -14,6 +14,9 @@ const routes = [
 export function createRouter() {
     return new Router({
         routes: routes,
-        mode: 'history'
+        mode: 'history',
+        scrollBehavior: () => {
+            return { x:0, y:0 };
+        }
     });
 };

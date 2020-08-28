@@ -11,23 +11,53 @@ $yellow: #EEBB0A;
 }
 
 .dinamik-navbar {
-    background-color: $blue;
+    background-color: #FFF;
     min-height: 65px;
+    transition: background-color .25s ease, color .2s ease;
+    box-shadow: 0px 5px 20px -5px rgb(37 60 136 / .25);
+    
+    &.unscrolled {
+        background-color: transparent;
+        box-shadow: none;
+
+        .navbar-brand {
+            color: #FFF;
+
+            img {
+                content: url('~assets/image/logo_white.png');
+            }
+        }
+
+        .nav-link {
+            color: #DDD;
+
+            &:hover {
+                color: #FFF;
+            }
+        }
+
+        .navbar-toggler {
+            .bar {
+                background-color: #FFF;
+            }
+        }
+    }
     
     .navbar-brand {
-        color: #FFF;
+        color: $blue;
 
         img {
             width: 185px;
+            content: url('~assets/image/logo.png');
         }
     }
 
     .nav-link {
-        color: #DDD;
+        color: $blue;
         font-weight: 600;
 
         &:hover {
-            color: #FFF;
+            color: $darkBlue;
         }
     }
 
@@ -43,7 +73,7 @@ $yellow: #EEBB0A;
         .bar {
             position: relative;
             width: 40px;
-            background-color: #FFF;
+            background-color: $blue;
             height: 4px;
             border-radius: 1rem;
             display: block;
@@ -55,12 +85,30 @@ $yellow: #EEBB0A;
 
 .page-section {
     padding: 4rem 0;
+    overflow: hidden;
+
+    &.blue {
+        background-color: $blue;
+
+        .title {
+            color: #FFF;
+
+            &::after {
+                background-color: $yellow;
+            }
+        }
+
+        .subtitle {
+            color: #BBB;
+        }
+    }
 
     .title {
         text-align: center;
         font-weight: 700;
         font-size: 2rem;
         position: relative;
+        color: #444;
 
         &::after {
             content: '';
@@ -82,6 +130,64 @@ $yellow: #EEBB0A;
         font-weight: 600;
         font-size: 1.25rem;
         color: #777;
+    }
+}
+
+.footer {
+    padding: 8rem 0 4rem 0;
+    background-color: $blue;
+
+    .title {
+        text-align: center;
+        margin-bottom: 4rem;
+
+        img {
+            width: 350px;
+        }
+    }
+
+    .footer-list {
+        margin-bottom: 2rem;
+
+        .list-name {
+            text-align: center;
+            color: #FFF;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding: 0;
+            list-style-type: none;
+
+            li {
+                text-align: center;
+
+                a {
+                    color: #FFF;
+                    font-weight: 600;
+                    transition: all .25s ease;
+
+                    &:hover {
+                        text-decoration: none;
+                        margin-left: 1rem;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .credits {
+        color: #FFF;
+        font-weight: 700;
+        font-size: 1.125rem;
+        text-align: center;
+        margin-top: 2rem;
     }
 }
 
@@ -127,10 +233,19 @@ $yellow: #EEBB0A;
         width: calc(140% + 1.3px);
         height: 100px;
     }
+
+    @media (min-width: 768px) {
+        &.responsive {
+            svg {
+                width: 100%;
+            }
+        }
+    }
 }
 
 .competition-card-group {
     margin-top: 8rem;
+    transition: all .25s ease;
 
     .competition-card {
         position: relative;
@@ -183,6 +298,132 @@ $yellow: #EEBB0A;
         
         .competition-card {
             margin-bottom: 14rem;
+        }
+    }
+}
+
+.timeline {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    .timeline-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 50%;
+        margin-left: 50%;
+        transition: all .25s ease;
+
+        &:nth-child(odd) {
+            &::after {
+                left: -2px;
+            }
+        }
+        
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+            margin-left: 0;
+            margin-right: 50%;
+
+            &::after {
+                right: -2px;
+            }
+
+            .timeline-circle {
+                margin-right: -2rem;
+                margin-left: 1rem;
+            }
+
+            .timeline-content {
+                .timeline-date {
+                    text-align: right;
+                }
+            }
+        }
+
+        &:not(:last-child) {
+            padding-bottom: 6rem;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 4px;
+                height: 4rem;
+                border-radius: 4px;
+                position: absolute;
+                background-color: #ADB5BD;
+                top: 5rem;
+            }
+        }
+
+        .timeline-circle {
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: -2rem;
+            margin-right: 1rem;
+
+            &::after {
+                content: '';
+                width: 1rem;
+                height: 1rem;
+                background-color: $yellow;
+                border-radius: 50%;
+            }
+        }
+
+        .timeline-content {
+            .timeline-date {
+                color: #ADB5BD;
+                font-weight: 600;
+                font-size: 1.05rem;
+            }
+            .timeline-title {
+                color: #FFF;
+                font-weight: 700;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .timeline-item {
+            width: 100%;
+            margin-left: 0;
+
+            .timeline-circle {
+                margin-left: 0;
+            }
+
+            &:nth-child(odd) {
+                &::after {
+                    left: calc(2rem - 2px);
+                }
+            }
+            
+            &:nth-child(even) {
+                flex-direction: row;
+
+                &::after {
+                    right: 0;
+                    left: calc(2rem - 2px);
+                }
+
+                .timeline-circle {
+                    margin-left: 0;
+                    margin-right: 1rem;
+                }
+
+                .timeline-content {
+                    .timeline-date {
+                        text-align: left;
+                    }
+                }
+            }
         }
     }
 }

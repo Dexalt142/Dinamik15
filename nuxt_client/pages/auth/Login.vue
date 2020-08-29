@@ -20,6 +20,7 @@
 <script>
 import Card from '~/components/global/Card';
 import FormInput from '~/components/global/Form/FormInput';
+import Constants from '~/constants.js';
 
 export default {
     middleware: 'guest',
@@ -48,7 +49,7 @@ export default {
             let response;
 
             try {
-                const res = await this.$axios.post('auth/login', this.authCredential);
+                const res = await this.$axios.post(Constants.API_ENDPOINT.LOGIN, this.authCredential);
                 response = res.data;
             } catch (e) {
                 if(e.message !== "Network Error") {

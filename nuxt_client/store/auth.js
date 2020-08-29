@@ -1,3 +1,5 @@
+import Constants from '~/constants.js';
+
 export const state = () => ({
     token: null,
     userData: null
@@ -40,7 +42,7 @@ export const actions = {
 
     async fetchUserData({ commit }) {
         try {
-            const { data } = await this.$axios.get('auth/user');
+            const { data } = await this.$axios.get(Constants.API_ENDPOINT.USER);
             commit('FETCH_USER_SUCCESS', data.user);
         } catch (e) {
             commit('FETCH_USER_FAIL');
@@ -53,7 +55,7 @@ export const actions = {
 
     async logout({ commit }) {
         try {
-            await this.$axios.post('auth/logout');
+            await this.$axios.post(Constants.API_ENDPOINT.LOGOUT);
         } catch (e) {
 
         }

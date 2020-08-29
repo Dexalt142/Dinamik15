@@ -9,6 +9,7 @@ const routes = [
     { path: '/', name: 'welcome', component: page('welcome/WelcomePage.vue') },
     { path: '/login', name: 'login', component: page('auth/Login.vue') },
     { path: '/register', name: 'register', component: page('auth/Register.vue') },
+    { path: '/dashboard', name: 'dashboard', component: page('dashboard/DashboardPage.vue') },
 ];
 
 export function createRouter() {

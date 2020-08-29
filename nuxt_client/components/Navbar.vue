@@ -33,6 +33,13 @@
                     <li class="nav-item" v-if="getAuthStatus">
                         <router-link :to="{name: 'dashboard'}" class="nav-link">Dashboard</router-link>
                     </li>
+
+                    <li class="nav-item dropdown" v-if="getAuthStatus">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ getUserData().name }}</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <button class="dropdown-item" @click="submitLogout">Logout</button>
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -42,6 +49,19 @@
 
 <script>
 export default {
+    methods: {
+        getUserData() {
+            return this.$store.getters['auth/getUserData'];
+        },
+        submitLogout() {
+            try {
+                this.$store.dispatch('auth/logout');
+                this.$router.push({name:'welcome'});
+            } catch (e) {
+
+            }
+        }
+    },
     computed: {
         getAuthStatus() {
             return this.$store.getters['auth/getAuthStatus'];

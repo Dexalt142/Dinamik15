@@ -9,7 +9,7 @@
 <script>
 import FormError from './FormError';
 export default {
-    name: 'Card',
+    name: 'FormInput',
     props: {
         name: {
             type: String

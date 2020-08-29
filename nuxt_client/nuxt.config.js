@@ -39,6 +39,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '~/plugins/axios',
+    '~/plugins/persisted-state',
     '~/plugins/jquery'
   ],
   /*
@@ -69,7 +71,7 @@ export default {
     baseURL: 'http://dinamik15.test/api'
   },
   loading: {
-    color: '#EEBB0A',
+    color: '#253C88',
     height: '2px'
   },
 

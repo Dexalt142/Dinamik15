@@ -20,7 +20,7 @@ export default {
             default: 'text'
         },
         error: {
-            type: String
+            type: Array
         },
         autocomplete: {
             type: Boolean

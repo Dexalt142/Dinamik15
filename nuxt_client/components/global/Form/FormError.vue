@@ -1,6 +1,6 @@
 <template>
     <div class="invalid-feedback">
-        {{ message }}
+        <div v-for="m in message" :key="m">{{ m }}</div>
     </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {
     name: 'FormError',
     props: {
         message: {
-            type: String
+            type: Array
         }
     }
 }

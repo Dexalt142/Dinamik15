@@ -70,39 +70,12 @@
                 <div class="title">Timeline</div>
                 <div class="row">
                     <div class="col">
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-content">
-                                    <div class="timeline-date">1 September 2020</div>
-                                    <div class="timeline-title">Pembukaan Pendaftaran</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-content">
-                                    <div class="timeline-date">10 September 2020</div>
-                                    <div class="timeline-title">Penutupan Pendaftaran</div>
-                                </div>
-                            </div>
-                            
-                            <div class="timeline-item">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-content">
-                                    <div class="timeline-date">15 September 2020</div>
-                                    <div class="timeline-title">Perlombaan Tahap 1</div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-content">
-                                    <div class="timeline-date">20 September 2020</div>
-                                    <div class="timeline-title">Penutupan Tahap 1</div>
-                                </div>
-                            </div>
-                        </div>
+                        <Timeline>
+                            <TimelineItem date="1 September 2020" title="Pembukaan Pendaftaran"></TimelineItem>
+                            <TimelineItem date="10 September 2020" title="Penutupan Pendaftaran"></TimelineItem>
+                            <TimelineItem date="15 September 2020" title="Perlombaan Tahap 1"></TimelineItem>
+                            <TimelineItem date="20 September 2020" title="Penutupan Tahap 1"></TimelineItem>
+                        </Timeline>
                     </div>
                 </div>
             </div>
@@ -157,6 +130,8 @@
 <script>
 import Card from '~/components/global/Card';
 import CompetitionCard from '~/components/WelcomePage/CompetitionCard';
+import Timeline from '~/components/global/Timeline/Timeline';
+import TimelineItem from '~/components/global/Timeline/TimelineItem';
 
 export default {
     head() {
@@ -165,7 +140,7 @@ export default {
         }
     },
     components: {
-        Card, CompetitionCard
+        Card, CompetitionCard, Timeline, TimelineItem
     },
     data() {
         return {

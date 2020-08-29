@@ -14,12 +14,24 @@
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <li class="nav-item" v-if="isWelcomePage">
+                        <a href="#competition" class="nav-link">Competition</a>
+                    </li>
+
+                    <li class="nav-item" v-if="isWelcomePage">
+                        <a href="#seminar" class="nav-link">Seminar</a>
+                    </li>
+
+                    <li class="nav-item" v-if="!getAuthStatus">
                         <router-link :to="{name: 'login'}" class="nav-link">Login</router-link>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item" v-if="!getAuthStatus">
                         <router-link :to="{name: 'register'}" class="nav-link">Register</router-link>
+                    </li>
+
+                    <li class="nav-item" v-if="getAuthStatus">
+                        <router-link :to="{name: 'dashboard'}" class="nav-link">Dashboard</router-link>
                     </li>
                 </ul>
             </div>
@@ -30,8 +42,13 @@
 
 <script>
 export default {
-    mounted() {
-        
+    computed: {
+        getAuthStatus() {
+            return this.$store.getters['auth/getAuthStatus'];
+        },
+        isWelcomePage() {
+            return (this.$route.name === 'welcome');
+        }
     }
 }
 </script>

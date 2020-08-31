@@ -134,11 +134,6 @@ import Timeline from '~/components/global/Timeline/Timeline';
 import TimelineItem from '~/components/global/Timeline/TimelineItem';
 
 export default {
-    head() {
-        return {
-            title: 'Dinamik 15'
-        }
-    },
     components: {
         Card, CompetitionCard, Timeline, TimelineItem
     },

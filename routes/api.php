@@ -23,7 +23,7 @@ Route::group(['prefix' => 'auth', 'namespace' => 'api\Auth'], function() {
     Route::post('register', 'RegisterController@register');
 
     Route::group(['middleware' => 'api.auth'], function() {
-        Route::get('user', 'SessionController@getUser')->middleware('api.verified');
+        Route::get('user', 'SessionController@getUser');
         Route::post('logout', 'SessionController@logout');
 
         Route::post('email/verify/{id}/{hash}', 'VerificationController@verify')->name('email.verify');

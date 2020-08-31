@@ -20,7 +20,6 @@ class SessionController extends Controller
         return response()->json([
             'status' => 200,
             'message' => 'Fetch user success',
-            'verified' => $request->user()->hasVerifiedEmail(),
             'user' => $request->user()
         ]);
     }

@@ -1,7 +1,7 @@
 <template>
     <div class="form-group">
-        <label for="">{{ name }}</label>
-        <input :type="type" :class="{'is-invalid' : error}" class="form-control" ref="inputRef" :name="name" :value="value" :autocomplete="autocomplete" @input="updateValue()">
+        <label v-if="label">{{ label }}</label>
+        <input :type="type" :class="{'is-invalid' : error}" class="form-control" ref="inputRef" :name="name" :value="value" :autocomplete="autocomplete ? 'on' : 'off'" @input="updateValue()">
         <FormError v-if="error" :message="error"></FormError>
     </div>
 </template>
@@ -14,6 +14,9 @@ export default {
         name: {
             type: String
         },
+        label: {
+            type: String
+        },
         type: {
             type: String,
             required: true,
@@ -23,7 +26,8 @@ export default {
             type: Array
         },
         autocomplete: {
-            type: Boolean
+            type: Boolean,
+            default: false
         },
         value: {}
     },

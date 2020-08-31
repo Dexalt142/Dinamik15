@@ -8,7 +8,8 @@ export const state = () => ({
 export const getters = {
     getToken: state => state.token,
     getUserData: state => state.userData,
-    getAuthStatus: state => state.userData !== null
+    getAuthStatus: state => state.userData !== null,
+    userVerified: state => state.userData ? state.userData.email_verified_at : null
 };
 
 export const mutations = {
@@ -55,7 +56,7 @@ export const actions = {
 
     async logout({ commit }) {
         try {
-            await this.$axios.post(Constants.API_ENDPOINT.LOGOUT);
+            await this.$axios.post(Constants.API_ENDPOINT.LOGOUT, {loading: false});
         } catch (e) {
 
         }

@@ -4,8 +4,8 @@
             <div class="col-md-6 mx-auto">
                 <Card color="white" title="Login" :loading="loading" loading_title="Mengotentikasi">
                     <form @submit.prevent="submitLogin">
-                        <FormInput v-model="authCredential.email" name="email" type="email" :autocomplete="true" :error="formErrors.email"></FormInput>
-                        <FormInput v-model="authCredential.password" name="password" type="password" :autocomplete="true" :error="formErrors.password"></FormInput>
+                        <FormInput v-model="authCredential.email" name="email" label="Email" type="email" :autocomplete="true" :error="formErrors.email"></FormInput>
+                        <FormInput v-model="authCredential.password" name="password" label="Password" type="password" :error="formErrors.password"></FormInput>
 
                         <div class="form-group">
                             <button class="btn btn-primary">Login</button>
@@ -26,7 +26,7 @@ export default {
     middleware: 'guest',
     head() {
         return {
-            title: 'Dinamik 15 - Login'
+            title: `Login - ${process.env.APP_NAME}`
         }
     },
     components: {
@@ -61,15 +61,18 @@ export default {
                 this.loading = false;
                 return;
             }
-
+            
             this.$store.dispatch('auth/saveToken', response.token);
             await this.$store.dispatch('auth/fetchUserData');
-
-            this.$router.push({name: 'dashboard'});
+            
+            if(this.$store.getters['auth/userVerified']) {
+                this.$router.push({name: 'dashboard'});
+            } else {
+                this.$router.push({name: 'verification'});
+            }
         }
     },
     mounted() {
-
     }
 }
 </script>

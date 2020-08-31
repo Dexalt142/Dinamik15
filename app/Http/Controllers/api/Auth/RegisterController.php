@@ -66,8 +66,7 @@ class RegisterController extends Controller
             if ($user) {
                 return response()->json([
                     'status' => 200,
-                    'message' => 'Registration success',
-                    'user' => $user
+                    'message' => 'Registration success'
                 ]);
             }
         } catch (Exception $e) {
@@ -105,6 +104,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password_confirmation' => ['required', 'string', 'min:8'],
         ], $messages, $attributes);
     }
 

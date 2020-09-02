@@ -7,8 +7,9 @@
                         <FormInput v-model="authCredential.email" name="email" label="Email" type="email" :autocomplete="true" :error="formErrors.email"></FormInput>
                         <FormInput v-model="authCredential.password" name="password" label="Password" type="password" :error="formErrors.password"></FormInput>
 
-                        <div class="form-group">
+                        <div class="form-group d-flex justify-content-center">
                             <button class="btn btn-primary">Login</button>
+                            <router-link :to="{name: 'password.forgot'}" class="ml-auto">Lupa password?</router-link>
                         </div>
                     </form>
                 </Card>

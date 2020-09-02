@@ -3,7 +3,11 @@ const Constants = {
         LOGIN: 'auth/login',
         REGISTER: 'auth/register',
         LOGOUT: 'auth/logout',
-        USER: 'auth/user'
+        USER: 'auth/user',
+        PASSWORD: {
+            EMAIL: 'auth/password/email',
+            RESET: 'auth/password/reset',
+        }
     }
 };
 

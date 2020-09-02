@@ -11,6 +11,7 @@ const routes = [
     { path: '/register', name: 'register', component: page('auth/RegisterPage.vue') },
     { path: '/verification', name: 'verification', component: page('auth/VerificationPage.vue') },
     { path: '/dashboard', name: 'dashboard', component: page('dashboard/DashboardPage.vue') },
+    { path: '/password/forgot', name: 'password.forgot', component: page('auth/password/ForgotPasswordPage.vue')}
 ];
 
 export function createRouter() {

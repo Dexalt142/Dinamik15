@@ -84,6 +84,7 @@ class ResetPasswordController extends Controller
             'token' => 'required',
             'email' => 'required|email',
             'password' => 'required|confirmed|min:8',
+            'password_confirmation' => 'required|min:8',
         ], $messages, $attributes);
     }
 
@@ -98,7 +99,7 @@ class ResetPasswordController extends Controller
     {
         return response()->json([
             'status' => 200,
-            'message' => 'Password berhasil diubah'
+            'message' => 'Password berhasil disimpan'
         ]);
     }
 
@@ -114,11 +115,11 @@ class ResetPasswordController extends Controller
         $errorMessage = "";
         switch ($response) {
             case Password::INVALID_USER:
-                $errorMessage = "Email tidak dapat ditemukan";
+                $errorMessage = "Permintaan tidak valid";
                 break;
 
             case Password::INVALID_TOKEN:
-                $errorMessage = "Token tidak valid";
+                $errorMessage = "Permintaan tidak valid";
                 break;
 
             case 'passwords.throttled':
@@ -128,10 +129,7 @@ class ResetPasswordController extends Controller
 
         return response()->json([
             'status' => 400,
-            'message' => 'Unable to reset password',
-            'errors' => [
-                'email' => [$errorMessage]
-            ]
+            'message' => $errorMessage,
         ], 400);
     }
 }

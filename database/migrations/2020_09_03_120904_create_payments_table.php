@@ -18,7 +18,7 @@ class CreatePaymentsTable extends Migration
             $table->string('file_name');
             $table->string('nama_pengirim');
             $table->string('status_upload_bukti');
-            $table->string('status_validasi');
+            $table->string('status_verifikasi');
             $table->unsignedBigInteger('team_id');
             $table->foreign('team_id')->references('id')->on('teams');
             $table->timestamps();

@@ -17,6 +17,7 @@ class CreateTeamMembersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('nisn');
+            $table->string('pas_foto');
             $table->string('ktp');
             $table->string('no_telp');
             $table->unsignedBigInteger('team_id');

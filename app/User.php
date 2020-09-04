@@ -80,4 +80,8 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail
     {
         return [];
     }
+
+    public function team() {
+        return $this->hasOne(\App\Team::class);
+    }
 }

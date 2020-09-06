@@ -68,9 +68,8 @@ export default {
 
                 this.loading = false;
             } catch (e) {
-                console.log(e);
                 if(e.response) {
-                    if(e.response.status == 422) {
+                    if(e.response.status === 422) {
                         this.formErrors = e.response.data.errors;
 
                         if(!this.formErrors.email || !this.formErrors.token) {

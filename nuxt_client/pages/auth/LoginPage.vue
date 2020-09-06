@@ -11,6 +11,8 @@
                             <button class="btn btn-primary">Login</button>
                             <router-link :to="{name: 'password.forgot'}" class="ml-auto">Lupa password?</router-link>
                         </div>
+                        <hr>
+                        <p>Belum memiliki akun? <router-link :to="{name: 'register'}">Daftar</router-link></p>
                     </form>
                 </Card>
             </div>

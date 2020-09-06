@@ -13,6 +13,8 @@
                         <div class="form-group">
                             <button class="btn btn-primary">Register</button>
                         </div>
+                        <hr>
+                        <p>Sudah memiliki akun? <router-link :to="{name: 'login'}">Login sekarang</router-link></p>
                     </form>
                 </Card>
             </div>

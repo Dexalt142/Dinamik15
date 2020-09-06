@@ -510,6 +510,49 @@ body {
     }
 }
 
+.skeleton-wrapper {
+    .skeleton {
+        background: #e3e7ea;
+        background-image: -webkit-linear-gradient(left, #e3e7ea 0%, #edeef1 20%, #e3e7ea 40%, #e3e7ea 100%);
+        background-repeat: no-repeat;
+        border-radius: 2px;
+        animation: 1s skeletonPulse linear infinite forwards;
+
+        &.title {
+            height: 14px;
+            width: 25%;
+            margin-bottom: 1rem;
+        }
+
+        &.content {
+            height: 10px;
+            width: 100%;
+            margin-bottom: .5rem;
+        }
+        
+        &.content-75 {
+            height: 10px;
+            width: 75%;
+            margin-bottom: .5rem;
+        }
+        
+        &.content-50 {
+            height: 10px;
+            width: 50%;
+            margin-bottom: .5rem;
+        }
+    }
+}
+
+@keyframes skeletonPulse {
+    0% {
+        background-position: -450px 0;
+    }
+    100% {
+        background-position: 450px 0;
+    }
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);

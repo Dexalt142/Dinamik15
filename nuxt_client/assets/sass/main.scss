@@ -468,7 +468,18 @@ body {
     }
 
     .form-control {
-        font-weight: 600;
+        font-weight: 500;
+        border: 2px solid #b7bbbf;
+        border-radius: .75rem;
+
+        &:focus {
+            box-shadow: none;
+            border-color: #80bdff;
+        }
+
+        &.is-invalid {
+            border-color: #dc3545;
+        }
     }
 
     .invalid-feedback {

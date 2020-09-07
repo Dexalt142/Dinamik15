@@ -79,7 +79,7 @@ class LoginController extends Controller
         return response()->json([
             'status' => 200,
             'message' => 'Login success',
-            'expires_in' => JWTAuth::factory()->getTTL() * 60,
+            'expires_in' => JWTAuth::factory()->getTTL() * 60000,
             'token' => $token
         ]);
     }

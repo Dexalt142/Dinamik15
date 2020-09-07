@@ -11,6 +11,9 @@ const Constants = {
         PASSWORD: {
             EMAIL: 'auth/password/email',
             RESET: 'auth/password/reset',
+        },
+        TEAM: {
+            TEAM_DATA: 'team'
         }
     }
 };

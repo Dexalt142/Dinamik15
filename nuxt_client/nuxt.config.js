@@ -64,6 +64,9 @@ export default {
     '@nuxtjs/router',
     '@nuxtjs/dotenv'
   ],
+  router: {
+    middleware: ['check-token']
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

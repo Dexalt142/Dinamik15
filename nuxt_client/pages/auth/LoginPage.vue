@@ -65,9 +65,10 @@ export default {
                 return;
             }
             
-            this.$store.dispatch('auth/saveToken', response.token);
+            this.$store.dispatch('auth/saveToken', {token: response.token, tokenExpiration: response.expires_in});
             await this.$store.dispatch('auth/fetchUserData');
-            
+            await this.$store.dispatch('team/fetchTeamData');
+
             if(this.$store.getters['auth/userVerified']) {
                 this.$router.push({name: 'dashboard'});
             } else {

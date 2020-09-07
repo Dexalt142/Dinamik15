@@ -7,7 +7,7 @@ export default (({store}) => {
 
     createPersistedState({
         key: 'dnmkdt',
-        paths: ['auth'],
+        paths: ['auth', 'team'],
         storage: {
             getItem: key => secLS.get(key),
             setItem: (key, value) => secLS.set(key, value),

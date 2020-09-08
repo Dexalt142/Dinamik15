@@ -55,9 +55,10 @@ export default {
         getUserData() {
             return this.$store.getters['auth/getUserData'];
         },
-        submitLogout() {
+
+        async submitLogout() {
             try {
-                this.$store.dispatch('auth/logout');
+                await this.$store.dispatch('auth/logout');
                 if(!this.isWelcomePage) {
                     this.$router.push({name:'welcome'});
                 }

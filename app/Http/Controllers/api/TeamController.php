@@ -10,9 +10,17 @@ class TeamController extends Controller
     
     public function getTeam(Request $request) {
 
+        $team = auth()->user()->team;
+        if($team) {
+            $team->competition;
+            $team->payment;
+            $team->instructor;
+            $team->creation;
+        }
+        
         return response()->json([
             'status' => 200,
-            'team' => auth()->user()->team
+            'team' => $team
         ]);
 
     }

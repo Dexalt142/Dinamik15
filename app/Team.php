@@ -15,7 +15,7 @@ class Team extends Model
     }
 
     public function competition() {
-        return $this->hasOne(\App\Competition::class);
+        return $this->belongsTo(\App\Competition::class);
     }
 
     public function payment() {

@@ -15,9 +15,9 @@ class CreateInstructorsTable extends Migration
     {
         Schema::create('instructors', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('nip');
-            $table->string('no_telp');
+            $table->string('name')->nullable();
+            $table->string('nip')->nullable();
+            $table->string('no_telp')->nullable();
             $table->unsignedBigInteger('team_id');
             $table->foreign('team_id')->references('id')->on('teams');
             $table->timestamps();

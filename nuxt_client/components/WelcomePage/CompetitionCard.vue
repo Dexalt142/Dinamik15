@@ -4,7 +4,7 @@
             <div class="card-body">
                 <slot></slot>
                 <div class="competition-title">{{ name }}</div>
-                <div class="competition-description">{{ description }}</div>
+                <a class="guidebook-link" target="_blank" :href="link">Guidebook</a>
             </div>
         </div>
     </div>
@@ -18,6 +18,9 @@ export default {
             type: String
         },
         description: {
+            type: String
+        },
+        link: {
             type: String
         }
     }

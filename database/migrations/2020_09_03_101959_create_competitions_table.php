@@ -18,7 +18,9 @@ class CreateCompetitionsTable extends Migration
             $table->string('name');
             $table->string('type');
             $table->string('price');
-            $table->dateTime('batas_proposal');
+            $table->dateTime('awal_berkas')->nullable();
+            $table->dateTime('batas_berkas')->nullable();
+            $table->dateTime('awal_karya');
             $table->dateTime('batas_karya');
             $table->timestamps();
         });

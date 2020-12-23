@@ -199,8 +199,14 @@ body {
 
 .btn {
     border-radius: 2rem;
-    padding: .5rem 2rem;
     font-weight: 600;
+    padding: .5rem 2rem;
+
+    &.btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
 
     &.btn-yellow {
         background: linear-gradient(45deg, $yellow, $orange);
@@ -279,6 +285,18 @@ body {
             font-weight: 500;
             font-size: 1.25rem;
             text-align: center;
+        }
+
+        .guidebook-link {
+            text-align: center;
+            display: block;
+            color: #DDD;
+            font-weight: 600;
+            text-decoration: none;
+            
+            &:hover {
+                color: #FFF;
+            }
         }
     
         &:hover {
@@ -579,5 +597,287 @@ body {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+.user-dashboard {
+    .header {
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        position: relative;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            width: 5px;
+            height: 100%;
+            background-color: $blue;
+        }
+
+        .team-name {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .competition-name {
+            font-weight: 500;
+            font-size: 1.125rem;
+            color: #777;
+        }
+    }
+
+    .dashboard-menu {
+        width: 100%;
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+
+            li {
+
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
+
+                .dashboard-menu-link {
+                    position: relative;
+                    display: block;
+                    padding: .5rem 1rem;
+                    font-weight: 600;
+                    color: #777;
+                    text-decoration: none;
+                    transition: all .25s ease;
+                    
+                    &::after {
+                        transition: all .25s ease;
+                        position: absolute;
+                        content: '';
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 3px;
+                        background-color: $blue;
+                        border-top-left-radius: 1rem;
+                        border-top-right-radius: 1rem;
+                        opacity: 0;
+                    }
+
+                    &:hover {
+                        color: #444;
+                        &::after {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        .content-title {
+            font-weight: 700;
+            color: #777;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -.25rem;
+                height: 4px;
+                width: 100px;
+                background-color: $blue;
+                border-radius: 1rem;
+            }
+        }
+    }
+}
+
+.info-box {
+    margin-bottom: 1rem;
+    background-color: #e8ecf1;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    .info-title {
+        font-weight: 500;
+
+    }
+
+    .info-value {
+        font-weight: 700;
+        font-size: 1.25rem;
+    }
+}
+
+.pembayaran-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    background-color: rgba(179, 224, 255, .5);
+    border: 2px dashed $blue;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    
+    .pembayaran-input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.pembayaran-form {
+
+    .pembayaran-preview {
+        position: relative;
+        border: 2px solid $blue;
+        border-radius: 1rem;
+        overflow: hidden;
+        margin-top: 1rem;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    
+        img {
+            width: 100%;
+        }
+    
+        .remove-button {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background-color: rgba(0, 0, 0, .5);
+            backdrop-filter: blur(4px);
+            color: #FFF;
+            font-weight: 600;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0;
+            transition: all .25s ease;
+        }
+    
+        &:hover {
+            .remove-button {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.pas-foto-wrapper {
+    position: relative;
+    border: 2px solid $blue;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 300px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .pas-foto {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .remove-button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background-color: rgba(0, 0, 0, .5);
+        backdrop-filter: blur(4px);
+        color: #FFF;
+        font-weight: 600;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0;
+        transition: all .25s ease;
+    }
+    
+    &:hover {
+        .remove-button {
+            opacity: 1;
+        }
+    }
+}
+
+.ktp-wrapper {
+    position: relative;
+    border: 2px solid $blue;
+    border-radius: 1rem;
+    overflow: hidden;
+    max-width: 400px;
+    max-height: 225px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .ktp {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .remove-button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background-color: rgba(0, 0, 0, .5);
+        backdrop-filter: blur(4px);
+        color: #FFF;
+        font-weight: 600;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0;
+        transition: all .25s ease;
+    }
+    
+    &:hover {
+        .remove-button {
+            opacity: 1;
+        }
+    }
+}
+
+.creation {
+    margin-bottom: 1rem;
+
+    .creation-title {
+        font-weight: 700;
+        font-size: 1.125rem;
+    }
+
+    .creation-content {
+        a {
+            font-weight: 500;
+        }
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Creation extends Model
 {
     protected $fillable = [
-        'proposal', 'karya', 'team_id'
+        'berkas', 'karya', 'team_id'
     ];
 
     public function team() {

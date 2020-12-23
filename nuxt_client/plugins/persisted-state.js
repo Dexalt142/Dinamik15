@@ -15,4 +15,14 @@ export default (({store}) => {
         }
     })(store);
 
+    createPersistedState({
+        key: 'dnmkadmdt',
+        paths: ['auth-admin'],
+        storage: {
+            getItem: key => secLS.get(key),
+            setItem: (key, value) => secLS.set(key, value),
+            removeItem: key => secLS.remove(key)
+        }
+    })(store);
+
 });

@@ -8,8 +8,8 @@
                         <div class="tagline">"New era with techno innovation"</div>
                         <div class="description">Take part in our thought provoking Seminar and Competition!</div>
                         <div class="action">
-                            <button class="btn btn-yellow mr-2 mb-2">Seminar</button>
-                            <button class="btn btn-yellow mb-2">Competition</button>
+                            <a href="#competition" class="btn btn-yellow mr-2 mb-2">Competition</a>
+                            <a href="#seminar" class="btn btn-yellow mb-2">Seminar</a>
                         </div>
                     </div>
                     <div class="col-md-4 hero-image">
@@ -32,21 +32,22 @@
                 <div class="title">Competition</div>
                 <div class="competition-card-group">
                     <div class="row">
-                        <CompetitionCard name="Animasi" description="Deskripsi animasi">
+                        <CompetitionCard name="Animation" link="https://bit.ly/Dinamik15-Animasi">
                             <img src="~/assets/image/animation.png" alt="Animation">
                         </CompetitionCard>
 
-                        <CompetitionCard name="Web" description="Deskripsi web">
+                        <CompetitionCard name="Web Dev" link="https://bit.ly/Dinamik15-WebDev">
                             <img src="~/assets/image/web.png" alt="Web">
                         </CompetitionCard>
 
-                        <CompetitionCard name="Iwc" description="Deskripsi iwc">
+                        <CompetitionCard name="Poster Design" link="https://bit.ly/Dinamik15-Poster">
+                            <img src="~/assets/image/poster.png" alt="Poster">
+                        </CompetitionCard>
+
+                        <CompetitionCard name="IWC" link="https://bit.ly/Dinamik15-iwc">
                             <img src="~/assets/image/iwc.png" alt="Iwc">
                         </CompetitionCard>
 
-                        <CompetitionCard name="Poster" description="Deskripsi poster">
-                            <img src="~/assets/image/poster.png" alt="Poster">
-                        </CompetitionCard>
                     </div>
                 </div>
             </div>
@@ -55,7 +56,8 @@
         <section class="page-section" id="seminar">
             <div class="container">
                 <div class="title">Seminar Nasional</div>
-                <div class="subtitle">Optimalisasi Digital Skill untuk Menunjang Terciptanya Society 5.0</div>
+                <div class="subtitle">Generating Ideas to Create Masterpiece in Techno Innovation</div>
+                <p class="text-center font-weight-bold my-5" style="font-size: 2rem">Coming Soon</p>
             </div>
         </section>
 
@@ -71,10 +73,11 @@
                 <div class="row">
                     <div class="col">
                         <Timeline>
-                            <TimelineItem date="1 September 2020" title="Pembukaan Pendaftaran"></TimelineItem>
-                            <TimelineItem date="10 September 2020" title="Penutupan Pendaftaran"></TimelineItem>
-                            <TimelineItem date="15 September 2020" title="Perlombaan Tahap 1"></TimelineItem>
-                            <TimelineItem date="20 September 2020" title="Penutupan Tahap 1"></TimelineItem>
+                            <TimelineItem date="21 September - 1 November 2020" title="Pendaftaran"></TimelineItem>
+                            <TimelineItem date="3 November 2020" title="Pengumpulan Karya"></TimelineItem>
+                            <TimelineItem date="4 November 2020" title="Pengumuman Babak Penyisihan"></TimelineItem>
+                            <TimelineItem date="10 November 2020" title="Technical Meeting Lomba"></TimelineItem>
+                            <TimelineItem date="14 November 2020" title="Final"></TimelineItem>
                         </Timeline>
                     </div>
                 </div>
@@ -102,6 +105,7 @@
                             <div class="list-name">Contacts</div>
                             <ul>
                                 <li><a href="https://instagram.com/dinamik_upi">Instagram</a></li>
+                                <li><a href="https://wa.link/jijthm">WhatsApp</a></li>
                             </ul>
                         </div>
                     </div>

@@ -15,7 +15,7 @@ class CreateCreationsTable extends Migration
     {
         Schema::create('creations', function (Blueprint $table) {
             $table->id();
-            $table->string('proposal')->nullable();
+            $table->string('berkas')->nullable();
             $table->string('karya')->nullable();
             $table->unsignedBigInteger('team_id');
             $table->foreign('team_id')->references('id')->on('teams');

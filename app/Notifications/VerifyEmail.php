@@ -26,7 +26,7 @@ class VerifyEmail extends Notification
         }
 
         return (new MailMessage)
-            ->subject('Verifikasi Email')
+            ->subject('Verifikasi Akun Dinamik 15')
             ->line('Klik tombol di bawah ini untuk memverifikasi email anda.')
             ->action('Verifikasi Email', $verificationUrl)
             ->line('Jika anda tidak membuat akun, abaikan email ini.');
@@ -40,7 +40,7 @@ class VerifyEmail extends Notification
      */
     protected function verificationUrl($notifiable)
     {
-        return URL::temporarySignedRoute(
+        $url = URL::temporarySignedRoute(
             'email.verify',
             Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
             [
@@ -48,5 +48,9 @@ class VerifyEmail extends Notification
                 'hash' => sha1($notifiable->getEmailForVerification()),
             ]
         );
+
+        $url = str_replace("http://dinamik15.test/api/auth/email/verify", config('app.url').'/verification/confirm', $url);
+
+        return $url;
     }
 }

@@ -16,7 +16,7 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Password reset')
+            ->subject('Reset Password Akun Dinamik 15')
             ->line('Anda menerima email ini karena anda meminta untuk mengatur ulang password anda.')
             ->action('Reset Password', $this->resetUrl($notifiable))
             ->line('Jika anda tidak meminta untuk mengatur ulang password anda, abaikan email ini.');
@@ -30,8 +30,8 @@ class ResetPassword extends Notification
      */
     protected function resetUrl($notifiable)
     {
-        $appUrl = config('app_url');
+        $appUrl = config('app.url');
 
-        return url("$appUrl/password/reset/$this->token") . '?email=' . urlencode($notifiable->email);
+        return url("$appUrl/password/reset/$this->token") . '/' . urlencode($notifiable->email);
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
@@ -60,7 +61,7 @@ class LoginController extends Controller
         }
 
         try {
-            if(!$token = JWTAuth::attempt($request->only('email', 'password'))) {
+            if(!$token = auth('api')->attempt($request->only('email', 'password'))) {
                 return response()->json([
                     'status' => 401,
                     'message' => 'Login failed',
@@ -105,5 +106,15 @@ class LoginController extends Controller
             'email' => ['required'],
             'password' => ['required'],
         ], $messages, $attributes);
+    }
+
+    /**
+     * Get the guard to be used during authentication.
+     *
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
+     */
+    protected function guard()
+    {
+        return Auth::guard('api');
     }
 }

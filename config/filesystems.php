@@ -55,6 +55,21 @@ return [
             'visibility' => 'public',
         ],
 
+        'pembayaran' => [
+            'driver' => 'local',
+            'root' => public_path() . '/bukti_pembayaran'
+        ],
+
+        'pas_foto' => [
+            'driver' => 'local',
+            'root' => public_path() . '/pas_foto'
+        ],
+
+        'ktp' => [
+            'driver' => 'local',
+            'root' => public_path() . '/ktp'
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

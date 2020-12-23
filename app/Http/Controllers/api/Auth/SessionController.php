@@ -17,11 +17,20 @@ class SessionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getUser(Request $request) {
+
+        if(auth('api')->user()) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Fetch user success',
+                'user' => auth('api')->user()
+            ]);
+        }
+
         return response()->json([
-            'status' => 200,
-            'message' => 'Fetch user success',
-            'user' => $request->user()
-        ]);
+            'status' => 401,
+            'message' => 'Fetch user failed'
+        ], 401);
+
     }
 
     /**
